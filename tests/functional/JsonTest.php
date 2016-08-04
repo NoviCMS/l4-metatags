@@ -16,7 +16,7 @@ class JsonTest extends AbstractFunctionalTest
 			file_put_contents($path, $json);
 		}
 
-		return new \jaapgoorhuis\LaravelMetatags\JsonMetatagStore(
+		return new \NoviCMS\LaravelMetatags\JsonMetatagStore(
 			new \Illuminate\Filesystem\Filesystem, $path
 		);
 	}

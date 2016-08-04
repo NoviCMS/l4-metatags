@@ -7,7 +7,7 @@
  * @package  l4-metatags
  */
 
-namespace jaapgoorhuis\LaravelMetatags;
+namespace NoviCMS\LaravelMetatags;
 
 use Illuminate\Database\Connection;
 class DatabaseMetatagStore extends MetatagStore

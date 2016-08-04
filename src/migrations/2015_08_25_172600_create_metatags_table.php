@@ -12,7 +12,7 @@ class CreateMetatagsTable extends Migration
 		if (version_compare(Application::VERSION, '5.0', '>=')) {
 			$this->tablename = 'metatagssettings';
 		} else {
-			$this->tablename = Config::get('jaapgoorhuis/l4-metatags::table');
+			$this->tablename = Config::get('NoviCMS/l4-metatags::table');
 		}
 	}
 

@@ -8,10 +8,10 @@
  * @package  l4-metatags
  */
 
-namespace jaapgoorhuis\LaravelMetatags;
+namespace NoviCMS\LaravelMetatags;
 
 use Closure;
-use jaapgoorhuis\LaravelMetatags\MetatagStore;
+use NoviCMS\LaravelMetatags\MetatagStore;
 use Illuminate\Contracts\Routing\TerminableMiddleware;
 
 class SaveMiddleware implements TerminableMiddleware

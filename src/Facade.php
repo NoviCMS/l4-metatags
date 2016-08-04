@@ -7,12 +7,12 @@
  * @package  l4-metatags
  */
 
-namespace jaapgoorhuis\LaravelMetatags;
+namespace NoviCMS\LaravelMetatags;
 
 class Facade extends \Illuminate\Support\Facades\Facade
 {
 	protected static function getFacadeAccessor()
 	{
-		return 'jaapgoorhuis\LaravelMetatags\MetatagsManager';
+		return 'NoviCMS\LaravelMetatags\MetatagsManager';
 	}
 }

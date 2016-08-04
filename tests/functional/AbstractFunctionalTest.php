@@ -1,7 +1,7 @@
 <?php
 
-use jaapgoorhuis\LaravelMetatags\JsonMetatagStore;
-use jaapgoorhuis\LaravelMetatags\DatabaseMetatagStore;
+use NoviCMS\LaravelMetatags\JsonMetatagStore;
+use NoviCMS\LaravelMetatags\DatabaseMetatagStore;
 
 abstract class AbstractFunctionalTest extends PHPUnit_Framework_TestCase
 {

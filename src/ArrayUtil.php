@@ -7,7 +7,7 @@
  * @package  l4-metatags
  */
 
-namespace jaapgoorhuis\LaravelMetatags;
+namespace NoviCMS\LaravelMetatags;
 
 /**
  * Array utility functions.

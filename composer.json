@@ -1,5 +1,5 @@
 {
-    "name": "jaapgoorhuis/l4-metatags",
+    "name": "novicms/l4-metatags",
     "description": "Persistant metatags in Laravel.",
     "license": "MIT",
     "authors": [
@@ -23,7 +23,7 @@
     },
     "autoload": {
         "psr-4": {
-            "jaapgoorhuis\\LaravelMetatags\\": "src/"
+            "NoviCMS\\LaravelMetatags\\": "src/"
         }
     },
     "minimum-stability": "dev",

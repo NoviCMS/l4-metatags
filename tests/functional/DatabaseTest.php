@@ -36,7 +36,7 @@ class DatabaseTest extends AbstractFunctionalTest
 			unset($store);
 		}
 
-		return new \jaapgoorhuis\LaravelMetatags\DatabaseMetatagStore(
+		return new \NoviCMS\LaravelMetatags\DatabaseMetatagStore(
 			$this->capsule->getConnection()
 		);
 	}

@@ -7,7 +7,7 @@
  * @package  l4-metatags
  */
 
-namespace jaapgoorhuis\laravelMetatags;
+namespace NoviCMS\laravelMetatags;
 
 abstract class MetatagStore
 {

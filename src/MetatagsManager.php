@@ -7,7 +7,7 @@
  * @package  l4-metatags
  */
 
-namespace jaapgoorhuis\LaravelMetatags;
+namespace NoviCMS\LaravelMetatags;
 
 use Illuminate\Support\Manager;
 use Illuminate\Foundation\Application;
@@ -16,21 +16,21 @@ class MetatagsManager extends Manager
 {
 	public function getDefaultDriver()
 	{
-		return $this->getConfig('jaapgoorhuis/l4-metatags::store');
+		return $this->getConfig('NoviCMS/l4-metatags::store');
 	}
 
 	public function createJsonDriver()
 	{
-		$path = $this->getConfig('jaapgoorhuis/l4-metatags::path');
+		$path = $this->getConfig('NoviCMS/l4-metatags::path');
 
 		return new JsonMetatagStore($this->app['files'], $path);
 	}
 
 	public function createDatabaseDriver()
 	{
-		$connectionName = $this->getConfig('jaapgoorhuis/l4-metatags::connection');
+		$connectionName = $this->getConfig('NoviCMS/l4-metatags::connection');
 		$connection = $this->app['db']->connection($connectionName);
-		$table = $this->getConfig('jaapgoorhuis/l4-metatags::table');
+		$table = $this->getConfig('NoviCMS/l4-metatags::table');
 
 		return new DatabaseMetatagStore($connection, $table);
 	}
@@ -48,7 +48,7 @@ class MetatagsManager extends Manager
 	protected function getConfig($key)
 	{
 		if (version_compare(Application::VERSION, '5.0', '>=')) {
-			$key = str_replace('jaapgoorhuis/l4-metatags::', 'metatagssettings.', $key);
+			$key = str_replace('NoviCMS/l4-metatags::', 'metatagssettings.', $key);
 		}
 
 		return $this->app['config']->get($key);

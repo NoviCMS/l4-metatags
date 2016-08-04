@@ -16,6 +16,6 @@ class MemoryTest extends AbstractFunctionalTest
 
 	protected function createStore(array $data = null)
 	{
-		return new \jaapgoorhuis\LaravelMetatags\MemoryMetatagStore($data);
+		return new \NoviCMS\LaravelMetatags\MemoryMetatagStore($data);
 	}
 }

@@ -7,7 +7,7 @@
  * @package  l4-metatags
  */
 
-namespace jaapgoorhuis\LaravelMetatags;
+namespace NoviCMS\LaravelMetatags;
 
 use Illuminate\Foundation\Application;
 
@@ -28,12 +28,12 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 		$method = version_compare(Application::VERSION, '5.2', '>=') ? 'singleton' : 'bindShared';
 
 		// Bind the manager as a singleton on the container.
-		$this->app->$method('jaapgoorhuis\LaravelMetatags\MetatagsManager', function($app) {
+		$this->app->$method('NoviCMS\LaravelMetatags\MetatagsManager', function($app) {
 			// When the class has been resolved once, make sure that settings
 			// are saved when the application shuts down.
 			if (version_compare(Application::VERSION, '5.0', '<')) {
 				$app->shutdown(function($app) {
-					$app->make('jaapgoorhuis\LaravelMetatags\MetatagStore')->save();
+					$app->make('NoviCMS\LaravelMetatags\MetatagStore')->save();
 				});
 			}
 
@@ -44,8 +44,8 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 		});
 
 		// Provide a shortcut to the SettingStore for injecting into classes.
-		$this->app->bind('jaapgoorhuis\LaravelMetatags\MetatagStore', function($app) {
-			return $app->make('jaapgoorhuis\LaravelMetatags\MetatagsManager')->driver();
+		$this->app->bind('NoviCMS\LaravelMetatags\MetatagStore', function($app) {
+			return $app->make('NoviCMS\LaravelMetatags\MetatagsManager')->driver();
 		});
 
 		if (version_compare(Application::VERSION, '5.0', '>=')) {
@@ -67,7 +67,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 			], 'migrations');
 		} else {
 			$this->app['config']->package(
-				'jaapgoorhuis/l4-metatags', __DIR__ . '/config', 'jaapgoorhuis/l4-metatags'
+				'NoviCMS/l4-metatags', __DIR__ . '/config', 'NoviCMS/l4-metatags'
 			);
 		}
 	}
@@ -80,8 +80,8 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 	public function provides()
 	{
 		return array(
-			'jaapgoorhuis\LaravelMetatags\MetatagsManager',
-			'jaapgoorhuis\LaravelMetatags\MetatagStore',
+			'NoviCMS\LaravelMetatags\MetatagsManager',
+			'NoviCMS\LaravelMetatags\MetatagStore',
 		);
 	}
 }
